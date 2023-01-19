@@ -32,6 +32,24 @@ export const onShowAthleteSuccess = (athlete) => {
         <p>${athlete.sport}</p>
         <p>${athlete.speed}</p>
         <p>${athlete._id}</p>
+
+        <form data-id="${athlete._id}">
+        <input type="text" name="firstName" value="${athlete.firstName}" />
+        <input type="text" name="lastName" value="${athlete.lastName}" />
+        <input type="text" name="sport" value="${athlete.sport}" />
+        <input type="number" name="speed" value="${athlete.speed}" />
+        <input type="submit" value="Update Athlete" />
+    </form>
+
+    <button data-id="${athlete._id}">Delete Athlete</button>
     `
     showAthleteContainer.appendChild(div)
+}
+
+export const onUpdateAthleteSuccess = () => {
+    messageContainer.innerText = 'Update was successful :)'
+}
+
+export const onDeleteAthleteSuccess = () => {
+    messageContainer.innerText = 'Delete was successful :)'
 }
